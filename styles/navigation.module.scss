@@ -1,0 +1,75 @@
+@import "_colors", "_variables", "_mixins";
+
+// main navigation bar
+.nav {
+  @media (max-width: 480px) {
+    @include size(375px, 56px);
+  }
+
+  @include size(1920px, 80px);
+  @include marginXAuto;
+  border: $border;
+  background-color: $white;
+  border-bottom: none;
+
+  // navigation bar container
+  .container {
+    @media (max-width: 480px) {
+      margin: 0;
+      padding: 0 16px;
+    }
+
+    @include size(auto, inherit);
+    @include marginX400;
+    @include flex(center, space-between, row);
+  }
+
+  img {
+    height: 32px;
+  }
+
+  a {
+    font-size: $font-size-20;
+    padding: 10px 16px;
+    margin: 10px 16px;
+    @media (max-width: 480px) {
+      display: none;
+    }
+  }
+
+  // navigation mobile menu
+  .navButton {
+    @include size(32px, 32px);
+    background-color: inherit;
+    border: none;
+    display: none;
+    img {
+      @include size(18px, 16px);
+    }
+    @media (max-width: 480px) {
+      @include flex(center, center, row);
+    }
+  }
+}
+
+.mobileMenu {
+  @media (max-width: 480px) {
+    @include flex(flex-start, space-between, column);
+  }
+
+  @include size(375px, auto);
+  border: $border;
+  border-top: none;
+  margin: auto;
+  padding: 35px 16px 21px 16px;
+  display: none;
+
+  button {
+    @include size(100%, 40px);
+    text-align: left;
+    font-size: $font-size-16;
+    padding: 0;
+    border: none;
+    background-color: inherit;
+  }
+}

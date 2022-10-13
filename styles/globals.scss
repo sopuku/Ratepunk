@@ -1,0 +1,26 @@
+@import "_colors", "_variables", "_mixins";
+
+@font-face {
+  font-family: "Gadugi";
+  src: url("/gadugi-bold.ttf");
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 100%;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  &:hover {
+    color: $link-color-hover;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}

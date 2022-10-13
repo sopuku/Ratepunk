@@ -1,0 +1,252 @@
+@import "_colors", "_variables", "_mixins";
+
+// Footer top bar
+#footerTop {
+  @media (max-width: 480px) {
+    @include size(375px, auto);
+  }
+
+  @include size(1920px, 144px);
+  background-color: $bg-footer-top;
+  border: $border;
+  margin: auto;
+
+  //Top footer container
+  .container {
+    @media (max-width: 480px) {
+      @include flex(center, flex-start, column);
+      margin: 24px 0 0 0;
+    }
+
+    @include size(inherit, inherit);
+    @include marginX400;
+    @include flex(center, flex-start, row);
+  }
+
+  //Button with link to chrome and app store
+  .footerTopElement {
+    @media (max-width: 480px) {
+      margin: 8px 16px;
+    }
+
+    @include size(320px, 80px);
+    @include flex(center, center, row);
+    @include b-r-16;
+    border: $border;
+    color: $bg-footer;
+    padding-left: 24px;
+    margin-right: 16px;
+
+    //Text inside button
+    .text {
+      @include flex(flex-start, space-between, column);
+      height: 100%;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+
+    h4 {
+      margin: 0;
+      font-size: $font-size-20;
+      align-items: bottom;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    img {
+      margin-right: 12px;
+      padding-bottom: 5px;
+    }
+  }
+
+  //Star raiting element
+  .rating {
+    @media (max-width: 480px) {
+      margin: 16px 0 32px 0;
+    }
+
+    @include flex(center, center, row-reverse);
+    margin: 0 16px;
+    gap: 16px;
+
+    input {
+      display: none;
+    }
+
+    label {
+      @media (max-width: 480px) {
+        font-size: $font-size-22;
+        width: 20px;
+      }
+
+      font-size: $font-size-28;
+      color: $white;
+      position: relative;
+      width: 25px;
+      cursor: pointer;
+
+      &::before {
+        content: "\2605";
+        position: absolute;
+      }
+    }
+
+    input:checked ~ label:before {
+      color: $bg;
+    }
+  }
+
+  h5 {
+    @media (max-width: 480px) {
+      font-size: $font-size-16;
+      margin: 0;
+    }
+
+    font-size: $font-size-20;
+    color: $white;
+    font-weight: normal;
+  }
+}
+
+// Footer bottom bar
+#footer {
+  @media (max-width: 480px) {
+    @include size(375px, auto);
+    padding: 48px 32px;
+  }
+
+  @include size(1920px, 348px);
+  @include marginXAuto;
+  @include flex(center, space-between, row);
+  background-color: $bg-footer;
+  border: $border;
+
+  // Bottom footer bar container
+  .container {
+    @media (max-width: 480px) {
+      margin: 0;
+      @include flex(flex-start, flex-start, column);
+    }
+
+    @include marginX400;
+    @include size(100%, inherit);
+    @include flex(center, space-between, row);
+
+    h4 {
+      @media (max-width: 480px) {
+        font-size: $font-size-16;
+      }
+
+      font-size: $font-size-20;
+      margin-top: 0;
+      font-weight: bold;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+    }
+  }
+}
+
+// Bottom footer left column
+.left {
+  @media (max-width: 480px) {
+    @include size(inherit, auto);
+  }
+
+  @include size(544px, 228px);
+  @include flex(flex-start, space-between, column);
+
+  img {
+    @include size(auto, 32px);
+  }
+
+  p {
+    margin: 32px 0 48px 0;
+    line-height: 24px;
+  }
+
+  h6 {
+    @media (max-width: 480px) {
+      display: none;
+    }
+
+    color: $light-gray;
+    font-size: $font-size-16;
+    margin: 0;
+    font-weight: normal;
+  }
+}
+
+// bottom footer middle container
+.mid {
+  @media (max-width: 480px) {
+    @include size(auto, auto);
+    margin-bottom: 32px;
+  }
+
+  @include size(auto, 228px);
+  @include flex(flex-start, flex-start, column);
+
+  a {
+    display: block;
+    padding-top: 15px;
+  }
+}
+
+// bottom footer right container
+.right {
+  @media (max-width: 480px) {
+    @include flex(flex-start, flex-start, column);
+
+    h6 {
+      display: block;
+      font-size: $font-size-16;
+      font-weight: normal;
+      color: $light-gray;
+      margin: 0;
+    }
+
+    .emailField {
+      margin: 23px 0 28px 0;
+    }
+  }
+
+  @include size(auto, 228px);
+  @include flex(flex-start, space-between, column);
+
+  h6 {
+    display: none;
+  }
+
+  img {
+    @media (max-width: 480px) {
+      margin: 0;
+    }
+
+    margin-top: 14px;
+    height: 16px;
+    padding-right: 16px;
+  }
+
+  // social icons
+  .icons {
+    @media (max-width: 480px) {
+      margin-top: 23px;
+      margin-bottom: 40px;
+    }
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+
+    img {
+      @include size(32px, 32px);
+      @include b-r-8;
+      background-color: $link-color-hover;
+      border: $border;
+      padding: 8px;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@import "_colors", "_variables";
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin marginXAuto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin marginX400 {
+  margin-left: 25rem;
+  margin-right: 25rem;
+}
+
+@mixin b-r-8 {
+  border-radius: 0.5rem;
+}
+
+@mixin b-r-16 {
+  border-radius: 1rem;
+}
+
+@mixin flex($align, $justify, $direction) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+@mixin button {
+  background-color: $link-color-hover;
+  color: $white;
+  border: $border;
+  &:hover {
+    background-color: $btn-hover;
+  }
+}
+
+@mixin email-field {
+  @include b-r-8;
+  @include flex(center, center, row);
+  border: $border;
+  margin-bottom: 16px;
+  margin-top: 6px;
+  color: $light-gray;
+  background-color: $white;
+  input {
+    @media (max-width: 480px) {
+      font-size: $font-size-16;
+      font-family: "Noto Sans", sans-serif;
+    }
+
+    font-size: $font-size-20;
+    padding: 0;
+    border: none;
+
+    &:focus {
+      outline: none;
+      background-color: $white;
+    }
+  }
+}

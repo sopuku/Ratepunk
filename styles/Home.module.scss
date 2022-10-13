@@ -1,0 +1,275 @@
+@import "_colors", "_variables", "_mixins";
+
+// main content window
+#main {
+  @media (max-width: 480px) {
+    @include size(375px, auto);
+  }
+
+  @include size(1920px, 925px);
+  @include marginXAuto;
+  background-color: $bg;
+  border: $border;
+
+  // main content window container
+  .container {
+    @media (max-width: 480px) {
+      @include flex(center, space-between, column);
+      margin: 0;
+    }
+
+    @include flex(center, space-between, row);
+    @include marginX400;
+    @include size(auto, auto);
+  }
+}
+
+//left item on the screen
+.left {
+  @media (max-width: 480px) {
+    @include size(343px, auto);
+    margin-top: 32px;
+    padding: 32px 16px;
+  }
+
+  @include size(539px, 797px);
+  @include b-r-16;
+  background-color: $bg-footer;
+  border: $border;
+  padding: 64px;
+  margin-top: 64px;
+
+  h1 {
+    @media (max-width: 480px) {
+      font-size: $font-size-32;
+      line-height: 48px;
+    }
+
+    font-size: $font-size-48;
+    color: $border-color;
+    font-family: $font-family;
+    line-height: 68px;
+    font-weight: 400;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    @media (max-width: 480px) {
+      font-size: $font-size-16;
+      margin-top: 24px;
+      line-height: 24px;
+      margin-bottom: 0px;
+    }
+
+    font-size: $font-size-20;
+    line-height: 32px;
+    margin-top: 32px;
+    margin-bottom: 40px;
+
+    &:last-child {
+      @media (max-width: 480px) {
+        padding-top: 71px;
+        margin: 0;
+      }
+
+      font-size: $font-size-16;
+      color: $light-gray;
+      padding-top: 30%;
+    }
+  }
+  // Error label
+  .label {
+    @include size(auto, 22px);
+    label {
+      color: $err;
+      font-size: $font-size-12;
+    }
+  }
+
+  // Registered email confirmation label
+  .labelSent {
+    @include size(auto, 22px);
+    @include flex(center, flex-start, row);
+    margin-bottom: 16px;
+    margin-top: 24px;
+
+    label {
+      color: $border-color;
+      font-weight: bold;
+    }
+
+    img {
+      @include size(32px, 32px);
+      margin-right: 16px;
+    }
+  }
+
+  // Regular button
+  .buttonUnsent {
+    @media (max-width: 480px) {
+      @include size(100%, 56px);
+      font-size: $font-size-16;
+      font-weight: bold;
+      font-family: "Noto Sans", sans-serif;
+    }
+
+    @include size(100%, 64px);
+    @include b-r-8;
+    @include button;
+    font-size: $font-size-20;
+  }
+
+  .buttonSent {
+    @media (max-width: 480px) {
+      display: block;
+    }
+
+    @include button;
+    @include size(100%, 56px);
+    display: none;
+    font-size: $font-size-16;
+    border-radius: 8px;
+  }
+}
+
+// Submission form email field
+.emailField {
+  @include size(100%, 64px);
+  @include email-field;
+  padding: 20px;
+
+  // Input area
+  input {
+    @media (max-width: 480px) {
+      @include size(100%, auto);
+      margin-top: 4px;
+    }
+
+    width: 85%;
+  }
+
+  img {
+    @include size(20px, auto);
+    margin-right: 20px;
+  }
+}
+
+.emailFieldSent {
+  @media (max-width: 480px) {
+    @include size(100%, 56px);
+  }
+
+  @include size(100%, 64px);
+  @include email-field;
+
+  input {
+    @media (max-width: 480px) {
+      width: 85%;
+    }
+
+    width: 70%;
+    margin: 20px auto 20px 20px;
+  }
+
+  //Button when form is submitted on mobile version
+  button {
+    @media (max-width: 480px) {
+      display: none;
+    }
+
+    @include size(90px, 100%);
+    @include button;
+    font-size: $font-size-20;
+    border: none;
+    border-left: $border;
+    border-radius: 0 8px 8px 0;
+
+    &:hover {
+      background-color: $btn-hover;
+    }
+  }
+}
+
+// right item on the screen
+.right {
+  @media (max-width: 480px) {
+    @include size(auto, auto);
+    margin-top: 48px;
+    padding: 0 16px;
+  }
+
+  @include size(450px, 699px);
+
+  // element that contains image and text
+  .element {
+    .leftImgPhone {
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      @include flex(center, center, column);
+      gap: 32px;
+      margin-bottom: 48px;
+      .rightImg,
+      .leftImg {
+        display: none;
+      }
+      .leftImgPhone {
+        display: block;
+      }
+    }
+
+    @include flex(center, flex-start, row);
+    margin-bottom: 64px;
+    gap: 48px;
+
+    //text of the element
+    .text {
+      @media (max-width: 480px) {
+        @include flex(center, center, column);
+        text-align: center;
+      }
+
+      @include flex(flex-start, space-between, column);
+    }
+
+    img {
+      @include size(144px, auto);
+    }
+
+    h6 {
+      @media (max-width: 480px) {
+        font-size: $font-size-16;
+        font-family: "Gadugi";
+      }
+      font-size: $font-size-20;
+      color: $link-color-hover;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    h3 {
+      @media (max-width: 480px) {
+        font-size: $font-size-32;
+      }
+
+      color: $border-color;
+      text-transform: uppercase;
+      font-size: $font-size-30;
+      font-family: $font-family;
+      margin: 16px 0;
+    }
+
+    p {
+      @media (max-width: 480px) {
+        font-size: $font-size-16;
+        line-height: 24px;
+      }
+
+      font-size: $font-size-20;
+      line-height: 32px;
+      margin: 0;
+    }
+  }
+}
